@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>রুকইয়াহ এর নির্দেশনা — কালাজাদু নিরাময়ের পথ</title>
+
+<!-- SEO -->
+<meta name="description" content="কুরআন ও সুন্নাহভিত্তিক রুকইয়াহ শরইয়্যাহ গাইড" />
+<meta name="theme-color" content="#0a0f1a" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="রুকইয়াহ গাইড — নিরাময়ের পথ" />
+<meta property="og:description" content="কুরআন ও সুন্নাহভিত্তিক রুকইয়াহ শরইয়্যাহ গাইড" />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Serif+Bengali:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --gold:#c9a84c;
+  --gold-light:#e8c97a;
+  --deep:#0a0f1a;
+  --dark:#0d1526;
+  --card:#111d35;
+  --card2:#0f1a30;
+  --green:#2e7d5e;
+  --green-light:#3da87c;
+  --text:#e8dfc8;
+  --text-dim:#9a9070;
+  --border:rgba(201,168,76,0.18);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--deep);
+  color:var(--text);
+  font-family:'Noto Serif Bengali', serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* Background */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(201,168,76,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 90%, rgba(46,125,94,0.07) 0%, transparent 60%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(201,168,76,0.015) 40px,
+      rgba(201,168,76,0.015) 41px
+    );
+  z-index:0;
+  pointer-events:none;
+}
+
+.wrap{
+  position:relative;
+  z-index:1;
+  max-width:850px;
+  margin:auto;
+  padding:0 16px 60px;
+}
+
+/* Header */
+header{
+  text-align:center;
+  padding:48px 20px 36px;
+}
+
+.bismillah{
+  font-family:'Amiri', serif;
+  font-size:clamp(30px,6vw,46px);
+  color:var(--gold);
+  line-height:1.6;
+  margin-bottom:8px;
+  text-shadow:0 0 30px rgba(201,168,76,0.25);
+}
+
+.bismillah-trans{
+  font-size:12px;
+  color:var(--text-dim);
+  margin-bottom:28px;
+}
+
+.star-line{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.star-line::before,
+.star-line::after{
+  content:'';
+  height:1px;
+  flex:1;
+  max-width:120px;
+  background:linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+.star{
+  color:var(--gold);
+}
+
+h1{
+  font-size:clamp(24px,5vw,34px);
+  color:var(--gold-light);
+  margin-bottom:10px;
+}
+
+.subtitle{
+  color:var(--text-dim);
+  font-size:14px;
+  line-height:1.8;
+}
+
+/* Tabs */
+.tabs{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:6px;
+  margin-bottom:28px;
+  position:sticky;
+  top:12px;
+  backdrop-filter:blur(10px);
+  z-index:50;
+}
+
+.tab{
+  flex:1;
+  min-width:90px;
+  padding:11px 8px;
+  border:none;
+  border-radius:10px;
+  background:transparent;
+  color:var(--text-dim);
+  cursor:pointer;
+  font-family:'Noto Serif Bengali', serif;
+  transition:0.25s ease;
+  font-size:13px;
+}
+
+.tab.active{
+  background:linear-gradient(135deg,var(--green),#1f5c43);
+  color:#fff;
+  box-shadow:0 4px 14px rgba(46,125,94,0.35);
+}
+
+.tab:hover{
+  color:#fff;
+}
+
+/* Sections */
+.section{
+  display:none;
+}
+
+.section.active{
+  display:block;
+  animation:fadeUp .4s ease;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(16px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Section Header */
+.sec-header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.sec-icon{
+  font-size:22px;
+}
+
+.sec-title{
+  font-size:22px;
+  font-weight:700;
+  color:var(--gold-light);
+}
+
+/* Cards */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px 20px;
+  margin-bottom:18px;
+  overflow:hidden;
+  position:relative;
+  transition:0.25s ease;
+}
+
+.card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.card::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:2px;
+  background:linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.card-label{
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+.card-title{
+  color:var(--gold-light);
+  font-size:18px;
+  margin-bottom:6px;
+  font-weight:700;
+}
+
+.card-ref{
+  color:var(--text-dim);
+  font-size:11px;
+  margin-bottom:14px;
+}
+
+/* Arabic */
+.arabic{
+  font-family:'Amiri', serif;
+  font-size:clamp(20px,4vw,30px);
+  line-height:2;
+  direction:rtl;
+  text-align:right;
+  background:rgba(0,0,0,0.22);
+  border-right:3px solid var(--gold);
+  border-radius:10px;
+  padding:16px 18px;
+  margin-bottom:12px;
+}
+
+/* Meaning */
+.meaning{
+  background:rgba(46,125,94,0.08);
+  border-left:3px solid var(--green-light);
+  border-radius:8px;
+  padding:12px 14px;
+  line-height:1.9;
+  font-size:13px;
+  color:#c4d1e5;
+  margin-bottom:10px;
+}
+
+.fadilat{
+  background:rgba(201,168,76,0.06);
+  border-radius:8px;
+  padding:10px 14px;
+  line-height:1.9;
+  font-size:12px;
+  color:var(--text-dim);
+}
+
+.fadilat strong{
+  color:var(--gold);
+}
+
+/* Steps */
+.steps{
+  display:flex;
+  flex-direction:column;
+}
+
+.step{
+  display:flex;
+  gap:14px;
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.step:last-child{
+  border-bottom:none;
+}
+
+.step-num{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,var(--green),#1f5c43);
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+}
+
+.step-text{
+  line-height:1.9;
+  font-size:14px;
+  padding-top:4px;
+}
+
+.step-text strong{
+  color:var(--gold-light);
+}
+
+/* Alert */
+.alert{
+  background:rgba(201,168,76,0.08);
+  border:1px solid rgba(201,168,76,0.2);
+  border-radius:14px;
+  padding:18px;
+  line-height:1.9;
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+.alert strong{
+  color:var(--gold);
+}
+
+.alert-icon{
+  font-size:20px;
+  margin-bottom:6px;
+}
+
+/* Important */
+.important{
+  background:rgba(200,50,50,0.08);
+  border:1px solid rgba(200,80,80,0.18);
+  border-radius:14px;
+  padding:18px;
+  line-height:1.9;
+  color:#f0b6b6;
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+/* Time Block */
+.time-block{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  background:var(--card2);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+  margin-bottom:14px;
+}
+
+.time-icon{
+  font-size:28px;
+  width:44px;
+  text-align:center;
+  flex-shrink:0;
+}
+
+.time-title{
+  color:var(--gold-light);
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.amal-list{
+  list-style:none;
+}
+
+.amal-list li{
+  position:relative;
+  padding-left:18px;
+  line-height:1.9;
+  font-size:13px;
+}
+
+.amal-list li::before{
+  content:'◆';
+  position:absolute;
+  left:0;
+  top:0;
+  color:var(--green-light);
+  font-size:8px;
+}
+
+/* Tasbih */
+.counter-wrap{
+  text-align:center;
+}
+
+.counter-btn{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  border:3px solid var(--green-light);
+  background:linear-gradient(135deg,var(--green),#1a5040);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  font-size:28px;
+  font-weight:700;
+  margin:auto;
+  cursor:pointer;
+  box-shadow:0 8px 25px rgba(46,125,94,0.35);
+  transition:0.12s ease;
+  font-family:'Noto Serif Bengali', serif;
+}
+
+.counter-btn:active{
+  transform:scale(.94);
+}
+
+.counter-label{
+  font-size:10px;
+  margin-top:3px;
+  color:#8fd3ba;
+}
+
+.counter-target{
+  margin-top:12px;
+  color:var(--text-dim);
+  font-size:13px;
+}
+
+.counter-reset{
+  margin-top:12px;
+  border:1px solid rgba(255,255,255,0.15);
+  background:transparent;
+  color:var(--text-dim);
+  padding:8px 20px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:0.2s ease;
+  font-family:'Noto Serif Bengali', serif;
+}
+
+.counter-reset:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+
+/* Doctor note */
+.doctor-note{
+  background:linear-gradient(
+    135deg,
+    rgba(46,125,94,0.12),
+    rgba(30,80,60,0.08)
+  );
+  border:1px solid rgba(46,125,94,0.25);
+  border-radius:14px;
+  padding:18px;
+  line-height:1.9;
+  font-size:13px;
+  margin-top:20px;
+}
+
+.doctor-note strong{
+  color:var(--green-light);
+}
+
+/* Scroll Button */
+.scroll-top{
+  position:fixed;
+  right:20px;
+  bottom:24px;
+  width:46px;
+  height:46px;
+  border:none;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--green),#1a5040);
+  color:#fff;
+  cursor:pointer;
+  font-size:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:0.3s ease;
+  z-index:100;
+}
+
+.scroll-top.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* Footer */
+.footer{
+  text-align:center;
+  margin-top:36px;
+  color:var(--text-dim);
+  font-size:12px;
+  line-height:1.8;
+}
+
+/* Mobile */
+@media (max-width:480px){
+
+  .tabs{
+    top:8px;
+  }
+
+  .tab{
+    font-size:12px;
+    min-width:72px;
+  }
+
+  .card{
+    padding:18px 16px;
+  }
+
+  .arabic{
+    font-size:22px;
+  }
+
+  .time-block{
+    flex-direction:column;
+  }
+
+  .time-icon{
+    width:auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<header>
+  <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+
+  <div class="bismillah-trans">
+    পরম করুণাময় অসীম দয়ালু আল্লাহর নামে
+  </div>
+
+  <div class="star-line">
+    <span class="star">✦</span>
+  </div>
+
+  <h1>রুকইয়াহ শরইয়্যাহ গাইড</h1>
+
+  <p class="subtitle">
+    কুরআন ও সুন্নাহভিত্তিক আধ্যাত্মিক নিরাময়ের গাইড
+  </p>
+</header>
+
+<!-- Tabs -->
+<div class="tabs">
+  <button class="tab active" data-tab="lakkhon">🔍 লক্ষণ</button>
+  <button class="tab" data-tab="paddhati">📖 পদ্ধতি</button>
+  <button class="tab" data-tab="dua">🤲 দোয়া</button>
+  <button class="tab" data-tab="routine">🌙 রুটিন</button>
+  <button class="tab" data-tab="tasbih">📿 তাসবীহ</button>
+</div>
+
+<!-- SECTION 1 -->
+<section id="lakkhon" class="section active">
+
+  <div class="sec-header">
+    <span class="sec-icon">🔍</span>
+    <span class="sec-title">লক্ষণ ও পরিচয়</span>
+  </div>
+
+  <div class="alert">
+    <div class="alert-icon">⚠️</div>
+    <strong>গুরুত্বপূর্ণ:</strong>
+    নিচের লক্ষণগুলো শারীরিক বা মানসিক কারণেও হতে পারে।
+    প্রয়োজনে অবশ্যই ডাক্তারের পরামর্শ নিন।
+  </div>
+
+  <div class="card">
+    <div class="card-label">কালো জাদুর লক্ষণ</div>
+    <div class="card-title">সিহর (কালো জাদু)</div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">১</div>
+        <div class="step-text">
+          স্বামী-স্ত্রীর মধ্যে হঠাৎ অকারণ ঝগড়া বৃদ্ধি
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">২</div>
+        <div class="step-text">
+          ঘুমের মধ্যে ভয়, দুঃস্বপ্ন বা অস্থিরতা
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">৩</div>
+        <div class="step-text">
+          কুরআন শুনলে অস্থির লাগা
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">৪</div>
+        <div class="step-text">
+          ইবাদতে অলসতা ও মনোযোগ কমে যাওয়া
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="doctor-note">
+    <strong>🏥 চিকিৎসাও জরুরি:</strong>
+    ইসলামে চিকিৎসা গ্রহণ সুন্নাহ। রুকইয়াহর পাশাপাশি ডাক্তারি চিকিৎসাও চালিয়ে যান।
+  </div>
+
+</section>
+
+<!-- SECTION 2 -->
+<section id="paddhati" class="section">
+
+  <div class="sec-header">
+    <span class="sec-icon">📖</span>
+    <span class="sec-title">রুকইয়াহর পদ্ধতি</span>
+  </div>
+
+  <div class="card">
+
+    <div class="card-label">ধাপে ধাপে</div>
+    <div class="card-title">রুকইয়াহ করার নিয়ম</div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">১</div>
+        <div class="step-text">
+          ওযু অবস্থায় রুকইয়াহ শুরু করুন
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">২</div>
+        <div class="step-text">
+          সূরা ফাতিহা, আয়াতুল কুরসি, ইখলাস, ফালাক ও নাস পড়ুন
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">৩</div>
+        <div class="step-text">
+          পানিতে ফুঁ দিয়ে পান করুন
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">৪</div>
+        <div class="step-text">
+          নিয়মিত আমল চালিয়ে যান
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="important">
+    🚫 জাদুকর, তান্ত্রিক বা শিরকপূর্ণ পদ্ধতি থেকে দূরে থাকুন।
+  </div>
+
+</section>
+
+<!-- SECTION 3 -->
+<section id="dua" class="section">
+
+  <div class="sec-header">
+    <span class="sec-icon">🤲</span>
+    <span class="sec-title">দোয়া ও আয়াত</span>
+  </div>
+
+  <div class="card">
+
+    <div class="card-label">সূরা ফাতিহা</div>
+    <div class="card-title">আল-ফাতিহা</div>
+
+    <div class="arabic">
+      اَلْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+    </div>
+
+    <div class="fadilat">
+      <strong>ফযীলত:</strong>
+      সূরা ফাতিহা শিফার সূরা।
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <div class="card-label">আয়াতুল কুরসি</div>
+    <div class="card-title">সুরক্ষার আয়াত</div>
+
+    <div class="arabic">
+      اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ
+    </div>
+
+    <div class="fadilat">
+      <strong>ফযীলত:</strong>
+      ঘুমের আগে পড়লে আল্লাহর হেফাজত থাকে।
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SECTION 4 -->
+<section id="routine" class="section">
+
+  <div class="sec-header">
+    <span class="sec-icon">🌙</span>
+    <span class="sec-title">দৈনিক রুটিন</span>
+  </div>
+
+  <div class="time-block">
+
+    <div class="time-icon">🌅</div>
+
+    <div>
+      <div class="time-title">সকালের আমল</div>
+
+      <ul class="amal-list">
+        <li>আয়াতুল কুরসি</li>
+        <li>সূরা ইখলাস, ফালাক, নাস</li>
+        <li>সকালের যিকির</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="time-block">
+
+    <div class="time-icon">🌙</div>
+
+    <div>
+      <div class="time-title">রাতের আমল</div>
+
+      <ul class="amal-list">
+        <li>আয়াতুল কুরসি</li>
+        <li>সূরা বাকারাহর শেষ দুই আয়াত</li>
+        <li>দরুদ শরীফ</li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SECTION 5 -->
+<section id="tasbih" class="section">
+
+  <div class="sec-header">
+    <span class="sec-icon">📿</span>
+    <span class="sec-title">ডিজিটাল তাসবীহ</span>
+  </div>
+
+  <div class="card">
+
+    <div class="card-label">তাসবীহ</div>
+
+    <div class="card-title" style="text-align:center;">
+      سُبْحَانَ اللَّهِ
+    </div>
+
+    <div class="counter-wrap">
+
+      <button class="counter-btn" id="counterBtn">
+
+        <span id="count">0</span>
+
+        <span class="counter-label">
+          ট্যাপ করুন
+        </span>
+
+      </button>
+
+      <div class="counter-target">
+        লক্ষ্য: ১০০ বার
+      </div>
+
+      <button class="counter-reset" id="resetBtn">
+        রিসেট করুন
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div class="footer">
+  © 2026 • রুকইয়াহ শরইয়্যাহ গাইড
+</div>
+
+</div>
+
+<!-- Scroll -->
+<button class="scroll-top" id="scrollBtn">
+  ↑
+</button>
+
+<script>
+/* Tabs */
+const tabs = document.querySelectorAll('.tab');
+const sections = document.querySelectorAll('.section');
+
+tabs.forEach(tab => {
+
+  tab.addEventListener('click', () => {
+
+    const target = tab.dataset.tab;
+
+    tabs.forEach(t => t.classList.remove('active'));
+    sections.forEach(s => s.classList.remove('active'));
+
+    tab.classList.add('active');
+
+    document.getElementById(target).classList.add('active');
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+  });
+
+});
+
+/* Tasbih Counter */
+let count = 0;
+
+const countEl = document.getElementById('count');
+const counterBtn = document.getElementById('counterBtn');
+const resetBtn = document.getElementById('resetBtn');
+
+counterBtn.addEventListener('click', () => {
+
+  count++;
+
+  countEl.textContent = count;
+
+  if(count >= 100){
+    counterBtn.style.background =
+      'linear-gradient(135deg,#c9a84c,#8a6a20)';
+  }
+
+  if(navigator.vibrate){
+    navigator.vibrate(10);
+  }
+
+});
+
+resetBtn.addEventListener('click', () => {
+
+  count = 0;
+
+  countEl.textContent = 0;
+
+  counterBtn.style.background =
+    'linear-gradient(135deg,var(--green),#1a5040)';
+
+});
+
+/* Scroll Top */
+const scrollBtn = document.getElementById('scrollBtn');
+
+window.addEventListener('scroll', () => {
+
+  if(window.scrollY > 300){
+    scrollBtn.classList.add('show');
+  } else {
+    scrollBtn.classList.remove('show');
+  }
+
+});
+
+scrollBtn.addEventListener('click', () => {
+
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  });
+
+});
+</script>
+
+</body>
+</html>
