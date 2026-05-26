@@ -1,501 +1,675 @@
 <!DOCTYPE html>
-
-<html lang="bn">
-
+<html lang="bn" dir="ltr">
 <head>
-
 <meta charset="UTF-8" />
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
 <title>রুকইয়াহ শিফা — আধ্যাত্মিক নিরাময়ের পথ</title>
 
-<meta name="description" content="কুরআন ও সুন্নাহভিত্তিক রুকইয়াহ শিফা এবং অডিও প্লেয়ার" />
-
+<meta name="description" content="কুরআন ও সুন্নাহভিত্তিক রুকইয়াহ শিফা, অডিও প্লেয়ার, দোয়া, রুকইয়াহ পদ্ধতি ও দৈনিক আমল" />
 <meta name="theme-color" content="#0a0f1a" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="রুকইয়াহ শিফা" />
+
+<meta property="og:title" content="রুকইয়াহ শিফা — আধ্যাত্মিক নিরাময়ের পথ" />
+<meta property="og:description" content="কুরআন ও সুন্নাহভিত্তিক রুকইয়াহ শিফা ও গাইড" />
+<meta property="og:type" content="website" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Sans+Bengali:wght@400;500;700&family=Noto+Serif+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
+  --gold:#c9a84c;
+  --gold2:#f3d17b;
+  --green:#2e7d5e;
+  --green2:#45b586;
 
- --gold:#c9a84c;
+  --bg:#0a0f1a;
+  --card:#10192d;
+  --card2:#0f1728;
 
- --gold-light:#e8c97a;
+  --text:#ece3cb;
+  --muted:#9f9677;
 
- --deep:#07111f;
+  --border:rgba(201,168,76,.18);
 
- --card:#0f1a30;
+  --shadow:0 10px 40px rgba(0,0,0,.45);
 
- --card2:#121f38;
-
- --green:#2e7d5e;
-
- --green-light:#3da87c;
-
- --text:#f1ead9;
-
- --text-dim:#b0a68a;
-
- --border:rgba(201,168,76,.18);
-
- --font-serif:'Noto Serif Bengali',serif;
-
- --font-sans:'Noto Sans Bengali',sans-serif;
-
+  --sans:'Noto Sans Bengali',sans-serif;
+  --serif:'Noto Serif Bengali',serif;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
-
- background:var(--deep);
-
- color:var(--text);
-
- font-family:var(--font-serif);
-
- overflow-x:hidden;
-
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--serif);
+  overflow-x:hidden;
 }
 
 body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
 
- content:"";
+  background:
+  radial-gradient(circle at top left, rgba(201,168,76,.08), transparent 35%),
+  radial-gradient(circle at bottom right, rgba(46,125,94,.12), transparent 35%);
+}
 
- position:fixed;
-
- inset:0;
-
- background:
-
- radial-gradient(circle at top left, rgba(201,168,76,.08), transparent 40%),
-
- radial-gradient(circle at bottom right, rgba(61,168,124,.08), transparent 40%);
-
- pointer-events:none;
-
- z-index:0;
-
+img,
+iframe{
+  max-width:100%;
+  content-visibility:auto;
 }
 
 .wrap{
-
- max-width:780px;
-
- margin:auto;
-
- padding:18px;
-
- position:relative;
-
- z-index:2;
-
+  position:relative;
+  z-index:2;
+  width:min(100%,760px);
+  margin:auto;
+  padding:0 16px 90px;
 }
 
 header{
-
- text-align:center;
-
- padding:20px 0 10px;
-
+  text-align:center;
+  padding:40px 10px 24px;
 }
 
 .bismillah{
+  font-family:'Amiri',serif;
+  font-size:clamp(30px,7vw,44px);
+  color:var(--gold2);
+  line-height:1.6;
+  margin-bottom:6px;
+}
 
- font-family:'Amiri',serif;
+.bismillah-trans{
+  font-family:var(--sans);
+  font-size:11px;
+  color:var(--muted);
+}
 
- color:var(--gold-light);
-
- font-size:clamp(28px,6vw,48px);
-
- line-height:1.8;
-
+h1{
+  margin-top:20px;
+  color:var(--gold2);
+  font-size:clamp(24px,6vw,34px);
 }
 
 .subtitle{
+  margin-top:8px;
+  font-family:var(--sans);
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.8;
+}
 
- color:var(--text-dim);
+.now-playing{
+  background:linear-gradient(135deg,#10192d,#08101c);
+  border:1px solid rgba(243,209,123,.25);
+  border-radius:20px;
+  padding:20px;
+  margin-bottom:24px;
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
 
- margin-top:10px;
+.now-playing::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:2px;
 
- line-height:1.8;
+  background:linear-gradient(
+  90deg,
+  transparent,
+  var(--gold),
+  var(--gold2),
+  transparent
+  );
+}
 
- font-family:var(--font-sans);
+.np-label{
+  font-size:10px;
+  font-family:var(--sans);
+  letter-spacing:2px;
+  color:var(--muted);
+  margin-bottom:8px;
+}
 
- font-size:13px;
+.np-ar{
+  font-family:'Amiri',serif;
+  direction:rtl;
+  text-align:right;
+  font-size:clamp(26px,7vw,38px);
+  color:var(--gold2);
+}
 
+.np-bn{
+  margin-top:8px;
+  font-size:18px;
+  font-weight:700;
+  color:var(--gold2);
+}
+
+.np-info{
+  margin-top:5px;
+  font-family:var(--sans);
+  font-size:12px;
+  color:var(--muted);
+}
+
+.wave{
+  margin-top:16px;
+  display:flex;
+  align-items:flex-end;
+  gap:4px;
+  height:28px;
+}
+
+.wave span{
+  width:4px;
+  border-radius:20px;
+  background:linear-gradient(180deg,var(--gold2),var(--green2));
+  height:8px;
+  opacity:.25;
+}
+
+.wave.playing span{
+  animation:wave .8s infinite ease-in-out;
+  opacity:1;
+}
+
+.wave span:nth-child(2){animation-delay:.1s}
+.wave span:nth-child(3){animation-delay:.2s}
+.wave span:nth-child(4){animation-delay:.3s}
+.wave span:nth-child(5){animation-delay:.15s}
+.wave span:nth-child(6){animation-delay:.25s}
+
+@keyframes wave{
+  0%,100%{height:8px}
+  50%{height:26px}
 }
 
 .tabs{
+  position:sticky;
+  top:10px;
+  z-index:30;
 
- display:grid;
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
 
- grid-template-columns:repeat(3,1fr);
+  margin-bottom:26px;
 
- gap:8px;
+  padding:5px;
 
- position:sticky;
+  border-radius:14px;
 
- top:10px;
+  background:rgba(10,15,26,.7);
 
- z-index:10;
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
 
- margin:20px 0;
-
- background:rgba(5,10,20,.8);
-
- backdrop-filter:blur(12px);
-
- padding:10px;
-
- border-radius:16px;
-
- border:1px solid var(--border);
-
+  border:1px solid var(--border);
 }
 
 .tab{
+  flex:1;
+  min-width:82px;
 
- border:none;
+  border:none;
+  border-radius:10px;
 
- background:transparent;
+  padding:10px 5px;
 
- color:var(--text-dim);
+  background:transparent;
 
- padding:12px 6px;
+  color:var(--muted);
 
- border-radius:12px;
+  font-family:var(--sans);
+  font-size:12px;
 
- cursor:pointer;
+  cursor:pointer;
 
- font-family:var(--font-sans);
-
- font-size:12px;
-
- transition:.25s;
-
+  transition:.25s;
 }
 
 .tab.active{
-
- background:linear-gradient(135deg,var(--green),#174634);
-
- color:#fff;
-
+  background:linear-gradient(135deg,var(--green),#1d5b43);
+  color:#fff;
 }
 
-.section{display:none}
+.section{
+  display:none;
+}
 
-.section.active{display:block}
+.section.active{
+  display:block;
+  animation:fadeUp .4s ease;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(8px);
+  }
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+.section-title{
+  color:var(--gold2);
+  font-size:18px;
+  margin-bottom:16px;
+  font-weight:700;
+}
 
 .card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:20px;
+  margin-bottom:18px;
+  box-shadow:var(--shadow);
+}
 
- background:linear-gradient(180deg,var(--card),var(--card2));
-
- border:1px solid var(--border);
-
- border-radius:18px;
-
- padding:18px;
-
- margin-bottom:18px;
-
+.card-label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:8px;
 }
 
 .card-title{
+  color:var(--gold2);
+  font-size:18px;
+  margin-bottom:8px;
+}
 
- color:var(--gold-light);
-
- margin-bottom:10px;
-
- font-size:20px;
-
+.card-ref{
+  font-family:var(--sans);
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7;
+  margin-bottom:14px;
 }
 
 .player-box{
-
- border-radius:16px;
-
- overflow:hidden;
-
- border:1px solid var(--border);
-
- background:#000;
-
+  overflow:hidden;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:#000;
 }
 
 .player-box iframe{
-
- width:100%;
-
- height:220px;
-
- border:none;
-
- display:block;
-
+  width:100%;
+  height:230px;
+  border:none;
+  display:block;
 }
 
-.surah-list{
+.player-meta{
+  padding:12px 14px;
+  background:#0d1526;
+  border-top:1px solid rgba(255,255,255,.06);
 
- display:flex;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 
- flex-direction:column;
-
- gap:10px;
-
- margin-top:15px;
-
+  font-family:var(--sans);
+  font-size:11px;
 }
 
-.surah-item{
-
- background:#0b1428;
-
- border:1px solid var(--border);
-
- border-radius:12px;
-
- padding:14px;
-
- display:flex;
-
- align-items:center;
-
- justify-content:space-between;
-
- gap:10px;
-
- cursor:pointer;
-
- transition:.2s;
-
+.player-status{
+  color:var(--gold2);
 }
 
-.surah-item:hover,.surah-item.active{
-
- border-color:var(--gold-light);
-
- background:rgba(46,125,94,.15);
-
+.list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:18px;
 }
 
-.si-ar{
+.item{
+  display:flex;
+  align-items:center;
+  gap:14px;
 
- font-family:'Amiri',serif;
+  background:var(--card2);
 
- color:var(--gold-light);
+  border:1px solid var(--border);
 
- font-size:20px;
+  border-radius:14px;
 
+  padding:14px;
+
+  cursor:pointer;
+
+  transition:.25s;
 }
 
-.si-bn{
-
- color:var(--text-dim);
-
- font-size:12px;
-
- line-height:1.7;
-
- font-family:var(--font-sans);
-
+.item:hover{
+  transform:translateY(-2px);
 }
 
-.play-btn{
+.item.active{
+  border-color:var(--gold2);
+  background:rgba(46,125,94,.12);
+}
 
- background:linear-gradient(135deg,var(--green),#153f2f);
+.num{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:700;
+  border:1px solid rgba(255,255,255,.08);
+  color:var(--gold2);
+}
 
- border:none;
+.item-info{
+  flex:1;
+}
 
- color:#fff;
+.item-ar{
+  font-family:'Amiri',serif;
+  font-size:18px;
+  color:var(--gold2);
+}
 
- border-radius:50%;
+.item-bn{
+  font-family:var(--sans);
+  font-size:12px;
+  color:var(--muted);
+  margin-top:3px;
+  line-height:1.6;
+}
 
- width:42px;
-
- height:42px;
-
- cursor:pointer;
-
- font-size:16px;
-
+.play{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,var(--green),#1c5a43);
+  color:#fff;
 }
 
 .arabic{
+  font-family:'Amiri',serif;
+  direction:rtl;
+  text-align:right;
+  line-height:2;
+  font-size:clamp(21px,5vw,31px);
 
- direction:rtl;
+  background:rgba(0,0,0,.22);
 
- text-align:right;
+  padding:18px;
+  border-radius:14px;
+  border-right:3px solid var(--gold);
 
- font-family:'Amiri',serif;
-
- line-height:2;
-
- font-size:clamp(22px,5vw,34px);
-
- background:rgba(0,0,0,.2);
-
- padding:16px;
-
- border-radius:12px;
-
- border-right:3px solid var(--gold);
-
- margin:10px 0;
-
+  margin-bottom:14px;
 }
 
 .meaning{
-
- line-height:2;
-
- color:#d7d7d7;
-
- font-family:var(--font-sans);
-
+  background:rgba(46,125,94,.08);
+  border-left:3px solid var(--green2);
+  padding:14px;
+  border-radius:10px;
+  font-family:var(--sans);
+  font-size:13px;
+  line-height:1.9;
+  color:#d4dceb;
 }
 
 .steps{
-
- display:flex;
-
- flex-direction:column;
-
- gap:14px;
-
+  display:flex;
+  flex-direction:column;
 }
 
 .step{
+  display:flex;
+  gap:14px;
+  padding:16px 0;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
 
- display:flex;
-
- gap:14px;
-
+.step:last-child{
+  border-bottom:none;
 }
 
 .step-num{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  flex-shrink:0;
 
- width:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
- height:34px;
+  background:linear-gradient(135deg,var(--green),#1c5a43);
 
- flex-shrink:0;
-
- border-radius:50%;
-
- background:linear-gradient(135deg,var(--green),#153f2f);
-
- display:flex;
-
- align-items:center;
-
- justify-content:center;
-
- color:#fff;
-
- font-weight:700;
-
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:700;
 }
 
 .step-text{
-
- line-height:1.9;
-
- font-family:var(--font-sans);
-
+  font-size:13.5px;
+  line-height:1.9;
 }
 
-.counter{
-
- text-align:center;
-
+.step-text strong{
+  color:var(--gold2);
 }
 
-.counter-circle{
+.time-block{
+  display:flex;
+  gap:14px;
 
- width:150px;
+  background:var(--card);
 
- height:150px;
+  border:1px solid var(--border);
 
- border-radius:50%;
+  border-radius:16px;
 
- border:4px solid var(--gold-light);
+  padding:18px;
 
- margin:15px auto;
-
- display:flex;
-
- align-items:center;
-
- justify-content:center;
-
- font-size:40px;
-
- cursor:pointer;
-
- background:linear-gradient(135deg,var(--green),#173d2f);
-
- user-select:none;
-
+  margin-bottom:16px;
 }
 
-.reset-btn{
+.time-icon{
+  font-size:28px;
+}
 
- border:none;
+.time-title{
+  color:var(--gold2);
+  margin-bottom:8px;
+  font-weight:700;
+}
 
- padding:10px 18px;
+.amal-list{
+  list-style:none;
+}
 
- border-radius:10px;
+.amal-list li{
+  position:relative;
+  padding-left:16px;
+  line-height:1.9;
+  font-size:13px;
+}
 
- background:#18253d;
+.amal-list li::before{
+  content:'◆';
+  position:absolute;
+  left:0;
+  top:0;
+  font-size:8px;
+  color:var(--green2);
+}
 
- color:#fff;
+.counter-wrap{
+  text-align:center;
+}
 
- cursor:pointer;
+.counter-btn{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  border:none;
 
- margin-top:10px;
+  background:linear-gradient(135deg,var(--green),#174634);
 
+  color:#fff;
+
+  font-size:34px;
+  font-weight:700;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  margin:auto;
+
+  cursor:pointer;
+
+  box-shadow:0 10px 30px rgba(46,125,94,.3);
+}
+
+.counter-btn:active{
+  transform:scale(.96);
+}
+
+.counter-label{
+  margin-top:4px;
+  font-size:10px;
+  font-family:var(--sans);
+}
+
+.counter-target{
+  margin-top:14px;
+  font-family:var(--sans);
+  color:var(--muted);
+  font-size:12px;
+}
+
+.counter-reset{
+  margin-top:14px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:transparent;
+
+  color:var(--muted);
+
+  padding:8px 18px;
+
+  border-radius:30px;
+
+  cursor:pointer;
 }
 
 .footer{
-
- text-align:center;
-
- padding:30px 0;
-
- color:var(--text-dim);
-
- font-size:12px;
-
- font-family:var(--font-sans);
-
+  margin-top:40px;
+  text-align:center;
+  font-size:11px;
+  line-height:1.9;
+  color:var(--muted);
+  font-family:var(--sans);
 }
 
-@media(max-width:600px){
+.footer span{
+  color:var(--gold2);
+}
 
- .tabs{
+.scroll-top{
+  position:fixed;
+  right:18px;
+  bottom:20px;
+  z-index:100;
 
-   grid-template-columns:repeat(2,1fr);
+  width:46px;
+  height:46px;
 
- }
+  border:none;
+  border-radius:50%;
 
- .player-box iframe{
+  background:linear-gradient(135deg,var(--green),#1c5a43);
 
-   height:200px;
+  color:#fff;
 
- }
+  font-size:18px;
 
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  opacity:0;
+  pointer-events:none;
+
+  transition:.3s;
+}
+
+.scroll-top.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+@media(max-width:520px){
+
+  .player-box iframe{
+    height:210px;
+  }
+
+  .tabs{
+    top:8px;
+  }
+
+  .tab{
+    min-width:68px;
+    font-size:11px;
+  }
+
+  .time-block{
+    flex-direction:column;
+  }
 }
 
 </style>
-
 </head>
 
 <body>
@@ -504,116 +678,208 @@ header{
 
 <header>
 
-<div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+<div class="bismillah">
+بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+</div>
 
-<h1 style="color:var(--gold-light);margin-top:8px;">রুকইয়াহ শিফা ও গাইড</h1>
+<div class="bismillah-trans">
+পরম করুণাময় অসীম দয়ালু আল্লাহর নামে
+</div>
+
+<h1>রুকইয়াহ শিফা ও গাইড</h1>
 
 <p class="subtitle">
-
 কুরআন ও সুন্নাহভিত্তিক আধ্যাত্মিক নিরাময় ও দীর্ঘমেয়াদী সুরক্ষা
-
 </p>
 
 </header>
 
-<div class="tabs">
+<div class="now-playing">
 
-<button class="tab active" data-tab="audio">🎙️ তিলাওয়াত</button>
+<div class="np-label">এখন বাজছে</div>
 
-<button class="tab" data-tab="method">📖 পদ্ধতি</button>
+<div class="np-ar" id="npAr">
+الْفَاتِحَة
+</div>
 
-<button class="tab" data-tab="dua">🤲 দোয়া</button>
+<div class="np-bn" id="npBn">
+সূরা আল-ফাতিহা
+</div>
 
-<button class="tab" data-tab="routine">🌙 নিয়ম</button>
+<div class="np-info" id="npInfo">
+ক্বারী: আব্দুর রহমান আল-মিনশাওয়ি
+</div>
 
-<button class="tab" data-tab="tasbih">📿 তাসবীহ</button>
-
-<button class="tab" data-tab="offline">⚡ Offline</button>
+<div class="wave" id="wave">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
 
 </div>
 
-<section class="section active" id="audio">
+<div class="tabs">
+
+<button class="tab active" data-tab="tilawat">
+🎙️ তিলাওয়াত
+</button>
+
+<button class="tab" data-tab="dua">
+🤲 দোয়া
+</button>
+
+<button class="tab" data-tab="method">
+📖 পদ্ধতি
+</button>
+
+<button class="tab" data-tab="routine">
+🌙 নিয়ম
+</button>
+
+<button class="tab" data-tab="tasbih">
+📿 তাসবীহ
+</button>
+
+</div>
+
+<!-- TILAWAT -->
+
+<section class="section active" id="tilawat">
+
+<div class="section-title">
+রুকইয়াহ তিলাওয়াত
+</div>
 
 <div class="card">
 
-<h2 class="card-title">রুকইয়াহ অডিও প্লেয়ার</h2>
-
 <div class="player-box">
 
-<iframe id="ytPlayer"
-
-allow="autoplay; encrypted-media"
-
-allowfullscreen
-
+<iframe
+id="ytPlayer"
 loading="lazy"
-
-src="https://www.youtube.com/embed/8tRSIjkF7G4?playsinline=1&rel=0&modestbranding=1&enablejsapi=1">
-
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen
+referrerpolicy="strict-origin-when-cross-origin"
+src="https://www.youtube.com/embed/8tRSIjkF7G4?enablejsapi=1&rel=0&modestbranding=1&playsinline=1">
 </iframe>
 
 </div>
 
-<div class="surah-list" id="surahList"></div>
+<div class="player-meta">
+
+<div id="playerText">
+সূরা ফাতিহা — আব্দুর রহমান আল মিনশাওয়ি
+</div>
+
+<div class="player-status" id="playerStatus">
+প্রস্তুত
+</div>
+
+</div>
+
+<div class="list" id="surahList"></div>
 
 </div>
 
 </section>
 
-<section class="section" id="method">
+<!-- DUA -->
+
+<section class="section" id="dua">
+
+<div class="section-title">
+দোয়া ও আয়াত
+</div>
 
 <div class="card">
 
-<h2 class="card-title">নিজের রুকইয়াহ নিজে করার নিয়ম</h2>
+<div class="card-label">
+সূরা ফাতিহা
+</div>
+
+<div class="card-title">
+সূরা আল-ফাতিহা
+</div>
+
+<div class="arabic">
+بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ ۞ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۞ الرَّحْمَنِ الرَّحِيمِ ۞ مَالِكِ يَوْمِ الدِّينِ ۞ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ۞ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۞ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ۞
+</div>
+
+<div class="meaning">
+<strong>অর্থ:</strong>
+সমস্ত প্রশংসা আল্লাহর জন্য যিনি বিশ্বজগতের প্রতিপালক।
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-label">
+আয়াতুল কুরসি
+</div>
+
+<div class="card-title">
+সর্বশ্রেষ্ঠ সুরক্ষার আয়াত
+</div>
+
+<div class="arabic">
+اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ
+</div>
+
+<div class="meaning">
+<strong>অর্থ:</strong>
+আল্লাহ, তিনি ছাড়া কোনো সত্য উপাস্য নেই।
+</div>
+
+</div>
+
+</section>
+
+<!-- METHOD -->
+
+<section class="section" id="method">
+
+<div class="section-title">
+রুকইয়াহ করার পদ্ধতি
+</div>
+
+<div class="card">
 
 <div class="steps">
 
 <div class="step">
-
 <div class="step-num">১</div>
-
 <div class="step-text">
-
-ওযু করে কিবলামুখী হয়ে বসুন এবং মনে দৃঢ় বিশ্বাস রাখুন যে শিফা একমাত্র আল্লাহর পক্ষ থেকেই আসে।
-
+<strong>ওযু করুন:</strong>
+পবিত্র অবস্থায় কিবলামুখী হয়ে বসুন।
 </div>
-
 </div>
 
 <div class="step">
-
 <div class="step-num">২</div>
-
 <div class="step-text">
-
-সূরা ফাতিহা, আয়াতুল কুরসি, সূরা ইখলাস, সূরা ফালাক ও সূরা নাস তিলাওয়াত করুন বা মনোযোগ দিয়ে শুনুন।
-
+<strong>সূরা তিলাওয়াত:</strong>
+সূরা ফাতিহা, আয়াতুল কুরসি এবং ৩ কুল পড়ুন।
 </div>
-
 </div>
 
 <div class="step">
-
 <div class="step-num">৩</div>
-
 <div class="step-text">
-
-তিলাওয়াত শেষে দুই হাতে ফুঁ দিয়ে শরীরে হাত বুলিয়ে নিন।
-
+<strong>দম করুন:</strong>
+হাতে ফুঁ দিয়ে শরীরে বুলিয়ে নিন।
 </div>
-
 </div>
 
 <div class="step">
-
 <div class="step-num">৪</div>
-
 <div class="step-text">
-
-পানিতে ও অলিভ অয়েলে দম করে ব্যবহার করতে পারেন।
-
+<strong>রুকইয়াহ পানি:</strong>
+পানিতে ফুঁ দিয়ে পান করুন।
 </div>
-
 </div>
 
 </div>
@@ -622,370 +888,382 @@ src="https://www.youtube.com/embed/8tRSIjkF7G4?playsinline=1&rel=0&modestbrandin
 
 </section>
 
-<section class="section" id="dua">
-
-<div class="card">
-
-<h2 class="card-title">সূরা আল-ফাতিহা</h2>
-
-<div class="arabic">
-
-بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ ۝
-
-الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۝
-
-الرَّحْمَنِ الرَّحِيمِ ۝
-
-مَالِكِ يَوْمِ الدِّينِ ۝
-
-إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ۝
-
-اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۝
-
-صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ۝
-
-</div>
-
-<div class="meaning">
-
-অর্থ: সমস্ত প্রশংসা আল্লাহর জন্য যিনি বিশ্বজগতের প্রতিপালক।
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2 class="card-title">আয়াতুল কুরসি</h2>
-
-<div class="arabic">
-
-اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ
-
-</div>
-
-<div class="meaning">
-
-অর্থ: আল্লাহ, তিনি ছাড়া কোনো সত্য উপাস্য নেই। তিনি চিরঞ্জীব, সর্বসত্তার ধারক।
-
-</div>
-
-</div>
-
-</section>
+<!-- ROUTINE -->
 
 <section class="section" id="routine">
 
-<div class="card">
+<div class="section-title">
+দৈনিক আমল
+</div>
 
-<h2 class="card-title">দৈনিক আমল</h2>
+<div class="time-block">
 
-<ul style="padding-left:18px;line-height:2;font-family:var(--font-sans);">
+<div class="time-icon">🌅</div>
 
-<li>সকাল-সন্ধ্যার আজকার</li>
+<div>
 
+<div class="time-title">
+সকালের আমল
+</div>
+
+<ul class="amal-list">
 <li>আয়াতুল কুরসি</li>
-
-<li>৩ কুল</li>
-
+<li>৩ কুল ৩ বার</li>
 <li>ইস্তিগফার</li>
-
 <li>দরুদ শরীফ</li>
-
 </ul>
 
 </div>
 
+</div>
+
+<div class="time-block">
+
+<div class="time-icon">🌙</div>
+
+<div>
+
+<div class="time-title">
+রাতের আমল
+</div>
+
+<ul class="amal-list">
+<li>ঘুমের আগে আয়াতুল কুরসি</li>
+<li>সূরা বাকারাহ শেষ দুই আয়াত</li>
+<li>৩ কুল</li>
+<li>শরীরে ফুঁ</li>
+</ul>
+
+</div>
+
+</div>
+
 </section>
+
+<!-- TASBIH -->
 
 <section class="section" id="tasbih">
 
-<div class="card counter">
-
-<h2 class="card-title">ডিজিটাল তাসবীহ</h2>
-
-<div class="counter-circle" id="counterCircle">0</div>
-
-<p style="font-family:var(--font-sans);">লক্ষ্যমাত্রা: ১০০ বার</p>
-
-<button class="reset-btn" id="resetBtn">রিসেট</button>
-
+<div class="section-title">
+ডিজিটাল তাসবীহ
 </div>
-
-</section>
-
-<section class="section" id="offline">
 
 <div class="card">
 
-<h2 class="card-title">Offline Support + Firebase</h2>
+<div class="counter-wrap">
 
-<div class="meaning">
+<button class="counter-btn" id="counterBtn">
 
-এই অ্যাপটি এখন Offline Cache Support সহ তৈরি করা হয়েছে। প্রথমবার ইন্টারনেট চালু অবস্থায় খুললে পরবর্তীতে ইন্টারনেট ছাড়াও UI লোড হবে।
+<span id="count">
+0
+</span>
 
-⚠️ YouTube ভিডিও Offline চলবে না, কারণ YouTube নিজস্ব সার্ভার নির্ভর।
+<span class="counter-label">
+ট্যাপ করুন
+</span>
 
-Firebase যুক্ত করার জন্য নিচে নিজের Config বসান।
+</button>
 
+<div class="counter-target">
+লক্ষ্যমাত্রা: ১০০
 </div>
 
-<pre style="white-space:pre-wrap;background:#08111f;padding:12px;border-radius:10px;color:#9ce4c5;overflow:auto;">
+<button class="counter-reset" id="resetBtn">
+রিসেট
+</button>
 
-const firebaseConfig = {
-
- apiKey: "YOUR_API_KEY",
-
- authDomain: "YOUR_DOMAIN",
-
- projectId: "YOUR_PROJECT_ID",
-
- storageBucket: "YOUR_BUCKET",
-
- messagingSenderId: "XXXX",
-
- appId: "XXXX"
-
-};
-
-</pre>
+</div>
 
 </div>
 
 </section>
 
 <div class="footer">
-
-© 2026 • MT Studio • Ruqyah Shifa
-
+© 2026 • রুকইয়াহ শিফা • Developed By <span>MT Studio</span>
 </div>
 
 </div>
+
+<button class="scroll-top" id="scrollBtn">
+↑
+</button>
 
 <script>
 
 const surahs = [
 
 {
-
 arabic:"الْفَاتِحَة",
-
 bn:"সূরা আল-ফাতিহা",
-
-info:"শিফা ও নিরাময়",
-
+info:"শিফার সূরা",
+qari:"আব্দুর রহমান আল মিনশাওয়ি",
 yt:"8tRSIjkF7G4"
-
 },
 
 {
-
 arabic:"آيَةُ الْكُرْسِيّ",
-
 bn:"আয়াতুল কুরসি",
-
-info:"সুরক্ষা ও হিফাজত",
-
+info:"সুরক্ষার আয়াত",
+qari:"আব্দুর রহমান আস-সুদাইস",
 yt:"_m1L_fOLs-g"
-
 },
 
 {
-
-arabic:"سُورَةُ الْإِخْلَاص",
-
+arabic:"سُورَةُ الإِخْلَاص",
 bn:"সূরা ইখলাস",
-
 info:"তাওহীদের সূরা",
-
+qari:"মিশারি রাশিদ",
 yt:"xuKm3xXJwvU"
-
 },
 
 {
-
-arabic:"سُورَةُ الْفَلَق",
-
+arabic:"سُورَةُ الفَلَق",
 bn:"সূরা ফালাক",
-
-info:"হিংসা ও জাদু থেকে সুরক্ষা",
-
+info:"জাদু ও হিংসা থেকে সুরক্ষা",
+qari:"মিশারি রাশিদ",
 yt:"gDlMzF3KEKE"
-
 },
 
 {
-
 arabic:"سُورَةُ النَّاس",
-
 bn:"সূরা নাস",
-
 info:"ওয়াসওয়াসা থেকে সুরক্ষা",
-
+qari:"মিশারি রাশিদ",
 yt:"gEPj2Ctvhsk"
-
 }
 
 ];
 
-const list = document.getElementById("surahList");
+const list=document.getElementById('surahList');
 
 function buildList(){
 
- list.innerHTML = "";
+list.innerHTML='';
 
- surahs.forEach((s,index)=>{
+surahs.forEach((s,index)=>{
 
-   const div = document.createElement("div");
+list.innerHTML+=`
 
-   div.className = "surah-item";
+<div class="item ${index===0?'active':''}" onclick="playSurah(${index})">
 
-   if(index===0) div.classList.add("active");
+<div class="num">
+${index+1}
+</div>
 
-   div.innerHTML = `
+<div class="item-info">
 
-   <div>
+<div class="item-ar">
+${s.arabic}
+</div>
 
-   <div class="si-ar">${s.arabic}</div>
+<div class="item-bn">
+${s.bn} • ${s.info}
+</div>
 
-   <div class="si-bn">${s.bn} • ${s.info}</div>
+</div>
 
-   </div>
+<div class="play">
+▶
+</div>
 
-   <button class="play-btn">▶</button>
+</div>
 
-   `;
+`;
 
-   div.onclick = ()=>{
+});
 
-      document.querySelectorAll(".surah-item").forEach(x=>x.classList.remove("active"));
+}
 
-      div.classList.add("active");
+function playSurah(index){
 
-      const iframe = document.getElementById("ytPlayer");
+const s=surahs[index];
 
-      iframe.src =
+document.getElementById('npAr').textContent=s.arabic;
+document.getElementById('npBn').textContent=s.bn;
+document.getElementById('npInfo').textContent='ক্বারী: '+s.qari;
 
-      "https://www.youtube.com/embed/" +
+document.getElementById('playerText').textContent=
+s.bn+' — '+s.qari;
 
-      s.yt +
+document.getElementById('playerStatus').textContent='চলছে';
 
-      "?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1";
+document.getElementById('wave').classList.add('playing');
 
-      setTimeout(()=>{
+document.querySelectorAll('.item').forEach((el,i)=>{
 
-        iframe.src =
+el.classList.toggle('active',i===index);
 
-        "https://www.youtube.com/embed/" +
+});
 
-        s.yt +
+const iframe=document.getElementById('ytPlayer');
 
-        "?autoplay=1&playsinline=1&rel=0&modestbranding=1";
-
-      },1000);
-
-   };
-
-   list.appendChild(div);
-
- });
+iframe.src=
+`https://www.youtube.com/embed/${s.yt}?enablejsapi=1&playsinline=1&rel=0&modestbranding=1&autoplay=1&mute=0`;
 
 }
 
 buildList();
 
-document.querySelectorAll(".tab").forEach(btn=>{
+const tabs=document.querySelectorAll('.tab');
+const sections=document.querySelectorAll('.section');
 
- btn.addEventListener("click",()=>{
+tabs.forEach(tab=>{
 
-   document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+tab.addEventListener('click',()=>{
 
-   document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));
+tabs.forEach(t=>t.classList.remove('active'));
+sections.forEach(s=>s.classList.remove('active'));
 
-   btn.classList.add("active");
+tab.classList.add('active');
 
-   document.getElementById(btn.dataset.tab).classList.add("active");
+document
+.getElementById(tab.dataset.tab)
+.classList.add('active');
 
-   window.scrollTo({top:0,behavior:"smooth"});
-
- });
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
 
 });
 
-let count = 0;
+});
 
-const counterCircle = document.getElementById("counterCircle");
+let count=0;
 
-counterCircle.addEventListener("click",()=>{
+const countEl=document.getElementById('count');
 
- count++;
+document
+.getElementById('counterBtn')
+.addEventListener('click',()=>{
 
- counterCircle.innerText = count;
+count++;
 
- if(navigator.vibrate){
+countEl.textContent=count;
 
-   navigator.vibrate(20);
+if(navigator.vibrate){
+navigator.vibrate(20);
+}
 
- }
+playBeep();
+
+localStorage.setItem('tasbihCount',count);
 
 });
 
-document.getElementById("resetBtn").addEventListener("click",()=>{
+document
+.getElementById('resetBtn')
+.addEventListener('click',()=>{
 
- count = 0;
+count=0;
 
- counterCircle.innerText = count;
+countEl.textContent=0;
 
-});
-
-/* Offline Service Worker */
-
-if ("serviceWorker" in navigator) {
-
-const swCode = `
-
-self.addEventListener('install', event => {
-
- event.waitUntil(
-
-   caches.open('ruqyah-cache-v1').then(cache => {
-
-     return cache.addAll(['./']);
-
-   })
-
- );
+localStorage.removeItem('tasbihCount');
 
 });
 
-self.addEventListener('fetch', event => {
+const saved=localStorage.getItem('tasbihCount');
 
- event.respondWith(
+if(saved){
 
-   caches.match(event.request).then(response => {
+count=parseInt(saved);
 
-     return response || fetch(event.request);
+countEl.textContent=count;
 
-   })
+}
 
- );
+let audioCtx=null;
+
+function playBeep(){
+
+try{
+
+if(!audioCtx){
+
+audioCtx=
+new(window.AudioContext||window.webkitAudioContext)();
+
+}
+
+const osc=audioCtx.createOscillator();
+const gain=audioCtx.createGain();
+
+osc.type='sine';
+
+osc.frequency.value=850;
+
+gain.gain.value=.03;
+
+osc.connect(gain);
+
+gain.connect(audioCtx.destination);
+
+osc.start();
+
+osc.stop(audioCtx.currentTime+.05);
+
+}catch(e){}
+
+}
+
+const scrollBtn=document.getElementById('scrollBtn');
+
+window.addEventListener('scroll',()=>{
+
+if(window.scrollY>300){
+
+scrollBtn.classList.add('show');
+
+}else{
+
+scrollBtn.classList.remove('show');
+
+}
 
 });
 
+scrollBtn.addEventListener('click',()=>{
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+});
+
+/* Offline PWA */
+
+if('serviceWorker' in navigator){
+
+const sw=`
+self.addEventListener('install',e=>{
+self.skipWaiting();
+});
+
+self.addEventListener('fetch',event=>{
+
+event.respondWith(
+
+fetch(event.request)
+.catch(()=>caches.match(event.request))
+
+);
+
+});
 `;
 
-const blob = new Blob([swCode], { type: 'application/javascript' });
+const blob=
+new Blob([sw],{type:'text/javascript'});
 
-const swURL = URL.createObjectURL(blob);
+const swURL=
+URL.createObjectURL(blob);
 
-navigator.serviceWorker.register(swURL)
-
-.then(() => console.log("Service Worker Registered"));
+navigator.serviceWorker.register(swURL);
 
 }
 
 </script>
 
 </body>
-
 </html>
